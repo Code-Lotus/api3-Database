@@ -1,15 +1,16 @@
 CREATE DATABASE DASHBOARD;
 USE DASHBOARD;
-CREATE TABLE usuario(
+-- DROP DATABASE DASHBOARD;
+CREATE TABLE usuarios (
 	usuario_id INT PRIMARY KEY AUTO_INCREMENT, 	
 	usuario_nome VARCHAR(50),
 	usuario_cpf VARCHAR(15),
 	usuario_email VARCHAR(70),
 	usuario_senha VARCHAR(35),
-	administrador BOOL	
+	administrador BOOL
 );
 
-CREATE TABLE cliente(
+CREATE TABLE clientes (
 	cliente_id INT PRIMARY KEY AUTO_INCREMENT,
 	cliente_nome VARCHAR(50),
 	cliente_cpfcnpj VARCHAR(15),
@@ -21,10 +22,17 @@ CREATE TABLE vendas (
     venda_data DATE,
     venda_produto VARCHAR(35),
     cliente_id INT,
-    FOREIGN KEY (cliente_id) REFERENCES cliente (cliente_id),
-    venda_valor FLOAT,
+    FOREIGN KEY (cliente_id) REFERENCES clientes (cliente_id),
+    produto_id INT,
+    FOREIGN KEY (produto_id) REFERENCES produtos (produto_id),
     usuario_id INT,
-    FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id)
+    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
+);
+
+CREATE TABLE produtos (
+	produto_id INT PRIMARY KEY AUTO_INCREMENT,
+    produto_nome VARCHAR(60),
+    produto_valor FLOAT
 );
 
 
@@ -41,10 +49,10 @@ INSERT INTO vendas (venda_data, venda_produto, cliente_id, venda_valor, usuario_
 VALUES ('2024-05-13', 'Produto A', 1, 100.00, 1);
 
 -- Mostrar valores da tabela usuario
--- SELECT * FROM usuario;
+SELECT * FROM usuario;
 
 -- Mostrar valores da tabela cliente
 -- SELECT * FROM cliente;
 
 -- Mostrar valores da tabela vendas
--- SELECT * FROM vendas;
+SELECT * FROM vendas;
