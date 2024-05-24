@@ -36,13 +36,21 @@ CREATE TABLE vendas (
     FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
 );
 
+CREATE TABLE comissoes (
+	comissao_id INT PRIMARY KEY AUTO_INCREMENT,
+	cnpn FLOAT,
+    cnpa FLOAT,
+    capn FLOAT,
+    capa FLOAT
+);
+
 -- Inserir valores na tabela usuario
-INSERT INTO usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha, administrador)
-VALUES ('João Silva', '123.456.789-00', 'joao@email.com', 'senha123', 1);
+-- INSERT INTO usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha, administrador)
+-- VALUES ('João Silva', '123.456.789-00', 'joao@email.com', 'senha123', 1);
 
 -- Inserir valores na tabela cliente
-INSERT INTO clientes (cliente_nome, cliente_cpfcnpj, cliente_segmento)
-VALUES ('Empresa XYZ', '987.654.321-00', 'Tecnologia');
+-- INSERT INTO clientes (cliente_nome, cliente_cpfcnpj, cliente_segmento)
+-- VALUES ('Empresa XYZ', '987.654.321-00', 'Tecnologia');
 
 -- Inserir valores na tabela vendas
 -- INSERT INTO vendas (venda_data, venda_produto, cliente_id, venda_valor, usuario_id)
@@ -56,3 +64,5 @@ SELECT * FROM usuarios;
 
 -- Mostrar valores da tabela vendas
 SELECT * FROM vendas;
+
+INSERT INTO comissoes (comissao_id, cnpn, cnpa, capn, capa) VALUES (1,1,1,1,1)
