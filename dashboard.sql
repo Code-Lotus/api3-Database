@@ -1,6 +1,6 @@
 CREATE DATABASE DASHBOARD;
 USE DASHBOARD;
-# DROP DATABASE DASHBOARD;
+-- DROP DATABASE DASHBOARD;
 CREATE TABLE usuarios (
 	usuario_id INT PRIMARY KEY AUTO_INCREMENT, 	
 	usuario_nome VARCHAR(50),
@@ -14,13 +14,15 @@ CREATE TABLE clientes (
 	cliente_id INT PRIMARY KEY AUTO_INCREMENT,
 	cliente_nome VARCHAR(50),
 	cliente_cpfcnpj VARCHAR(15),
-	cliente_segmento VARCHAR(25)
+	cliente_segmento VARCHAR(25),
+    cliente_data DATE
 );
 
 CREATE TABLE produtos (
 	produto_id INT PRIMARY KEY AUTO_INCREMENT,
     produto_nome VARCHAR(60),
-    produto_valor FLOAT
+    produto_valor FLOAT,
+    produto_data DATE
 );
 
 CREATE TABLE vendas (
