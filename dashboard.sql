@@ -14,7 +14,7 @@ CREATE TABLE usuarios (
 CREATE TABLE clientes (
 	cliente_id INT PRIMARY KEY AUTO_INCREMENT,
 	cliente_nome VARCHAR(50),
-	cliente_cpfcnpj VARCHAR(15),
+	cliente_cpfcnpj VARCHAR(20),
 	cliente_segmento VARCHAR(25),
     cliente_data DATE
 );
@@ -47,7 +47,7 @@ CREATE TABLE comissoes (
 );
 
 -- Inserir valores na tabela usuario
-# INSERT INTO usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha, administrador) VALUES ('João Silva', '123.456.789-00', 'joao@email.com', 'senha123', 1);
+ INSERT INTO usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha, administrador) VALUES ('João Silva', '123.456.789-00', 'joao@email.com', 'senha123', 1);
 
 -- Inserir valores na tabela cliente
 # INSERT INTO clientes (cliente_nome, cliente_cpfcnpj, cliente_segmento) VALUES ('Empresa XYZ', '987.654.321-00', 'Tecnologia');
